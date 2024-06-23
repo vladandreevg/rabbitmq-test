@@ -11,8 +11,14 @@ $channel    = $connection -> channel();
 // объявление очереди
 $channel -> queue_declare('hello', false, false, false, false);
 
+// попробуем отправить массив
+$data = [
+	'name'    => 'John',
+	'surname' => 'Doe'
+];
+
 // отправка сообщения
-$msg = new AMQPMessage('Hello World!');
+$msg = new AMQPMessage(json_encode($data));
 
 $channel -> basic_publish($msg, '', 'hello');
 
