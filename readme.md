@@ -1,0 +1,1 @@
+https://pacificsky.ru/brokery-ocheredej/190-php-razrabotka-pervogo-prilozhenija-s-ispolzovaniem-rabbitmq.html
