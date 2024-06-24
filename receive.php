@@ -13,10 +13,12 @@ $channel -> queue_declare('hello', false, false, false, false);
 
 echo " [*] Waiting for messages. To exit press CTRL+C\n";
 
+// функция обработки сообщения
 $callback = static function ($msg) {
 	echo ' [x] Received ', $msg -> body, "\n";
 };
 
+// создание потребителя
 $channel -> basic_consume('hello', '', false, true, false, false, $callback);
 
 while (count($channel -> callbacks)) {
